@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Trivia</title>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.typekit.net/eml4thc.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+
+<body>
+<div class="container">
+    <div class="timerDisplay">Timer Countdown: </div>
+    <h1 id="question"></h1>
+    <div class="title">
+        <h1>Can You Answer These Cleveland Trivia Questions?</h1>
+    </div>
+    <button type="start" id="startme">Start</button>
+        <div class="quizContainer">
+            <div class="row">
+                <button type="button" class="btn btn-block btn-primary btn-info" id="button0" data-value=0>Button0</button>
+                <button type="button" class="btn btn-block btn-secondary btn-info" id="button1" data-value=1>Button1</button>
+                <button type="button" class="btn btn-block btn-secondary btn-info" id="button2" data-value=2>Button2</button>
+                <button type="button" class="btn btn-block btn-secondary btn-info" id="button3" data-value=3>Button3</button>
+            </div>
+            <div class="row">
+                <div id="quizMessage"></div>
+                <div id="score"></div>
+            </div>
+            <div class="row">
+                <button type="reset" class="resetme" id="reset" value=reset>Reset Game</button>
+            </div>   
+        </div>
+</div>
+<script type="text/javascript" src="assets/javascript/trivia.js" ></script>
+
+</body>
+</html>

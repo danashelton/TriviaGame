@@ -1,0 +1,42 @@
+@import url("https://use.typekit.net/eml4thc.css");
+
+body {
+    background: url(../images/background.jpg) no-repeat;
+    border-top: solid 5px cadetblue;
+    background-size: cover;
+    background-color: #000000;
+    font-family: "halyard-display",sans-serif;
+    text-align: center;
+    color: white;
+    font-weight: 400;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+.container {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+h1 {
+    padding-top: 50px;
+    text-shadow: 2px 2px 6px #000000;
+    padding-bottom: 25px;
+}
+
+#quizMessage {
+    color: rgb(217, 219, 13);
+    display: block;
+    width: 100%;
+}
+
+#quizMessage p {
+    color: #ffffff;
+    font-size: 1.1em;
+    font-weight: lighter;
+}
+
+
+.timerDisplay {
+    color: rgb(252, 2, 177);
+}
+
