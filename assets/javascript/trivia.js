@@ -92,11 +92,11 @@ var gameScores = {
 };
 
 var timer = {
-    time:10,
+    time:15,
 
     reset: function(){
-        timer.time = 10; 
-        $('.timerDisplay').html('Timer: ' + '00:10');
+        timer.time = 15; 
+        $('.timerDisplay').html('Timer: ' + '00:15');
     },
 
     start: function(){
@@ -127,12 +127,12 @@ var timer = {
     timeConverter: function(t){ 
         var minutes = Math.floor(t/60);
         var seconds = t - (minutes * 60);
-        if (seconds < 10){
+        if (seconds < 15){
             seconds = "0" + seconds;
         }
         if (minutes === 0){
             minutes = "00";
-        } else if (minutes < 10){
+        } else if (minutes < 15){
             minutes = "0" + minutes;
         }
         return minutes + ":" + seconds;
