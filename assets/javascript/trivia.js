@@ -127,12 +127,12 @@ var timer = {
     timeConverter: function(t){ 
         var minutes = Math.floor(t/60);
         var seconds = t - (minutes * 60);
-        if (seconds < 15){
+        if (seconds < 10){
             seconds = "0" + seconds;
         }
         if (minutes === 0){
             minutes = "00";
-        } else if (minutes < 15){
+        } else if (minutes < 10){
             minutes = "0" + minutes;
         }
         return minutes + ":" + seconds;
@@ -152,7 +152,8 @@ function resetVariables() {
 }
 
 //move to next question function
-$('#nextBtn').on("click", function() {
+
+$('#nextBtn').click(function() {
     indexQuestion++;
     if (indexQuestion < QuestionsArray.length) {
         displayQuestion();
@@ -163,9 +164,36 @@ $('#nextBtn').on("click", function() {
         timer.stop();
         timer.reset();
         timer.start();
+    }
+    else {
+        $('#quizMessage').hide();
+        $('#question').hide();
+        $("#score").html("<div>"+ "Game Over! <br> Your Score" +"</div>"+
+        "<div>"+ "Correct Guesses: " + gameScores.answeredCorrect +"</div>" + 
+        "<div>"+ "Wrong Guesses: " + gameScores.answeredWrong +"</div>" +
+        "<div>"+ "Missed Questions: " + gameScores.missed +"</div>");    
+        timer.stop();
+        $('.timerDisplay').html('00:00');
+
+        $("#reset").show();
         $('#nextBtn').hide();
+
+        $('.resetme').click(function()
+        {
+            $('#quizMessage').hide();
+            resetVariables();
+            displayQuestion();
+            $('#nextBtn').hide();
+            $('#question').show();
+            $('.btn').show();
+            $('.timerDisplay').show();
+            timer.stop();
+            timer.reset();
+            timer.start();
+        });
     }
 });
+
 
 
 function nextQuestion() {
@@ -229,7 +257,7 @@ $(document).ready(function() {
     $("#reset").hide();
     $('#nextBtn').hide();
     
-    $('#startme').on("click", function() 
+    $('#startme').click(function() 
     
         {
             displayQuestion();
@@ -268,9 +296,9 @@ if (indexQuestion < QuestionsArray.length){
     $('.timerDisplay').hide();
     $('.btn').hide();
     $('#nextBtn').show();
-
+    /*
     setTimeout(nextQuestion, 15000);
-    
+    */
 }
 });
 
