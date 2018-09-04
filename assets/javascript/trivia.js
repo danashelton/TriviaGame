@@ -115,6 +115,7 @@ var timer = {
         if (timer.time == 0){
             $('#quizMessage').show();
             $('.timerDisplay').hide();
+            $('#nextBtn').show();
             $('.btn').hide();
             $('#quizMessage').html("<h3>Time's up! <br> The correct answer was: <br>" + QuestionsArray[indexQuestion].answer + "</h3>" + "<br><p>" + QuestionsArray[indexQuestion].fact + "</p><br>");
             gameScores.missed++;
@@ -151,14 +152,30 @@ function resetVariables() {
 }
 
 //move to next question function
+$('#nextBtn').on("click", function() {
+    indexQuestion++;
+    if (indexQuestion < QuestionsArray.length) {
+        displayQuestion();
+        $('#quizMessage').hide();
+        $('.timerDisplay').show();
+        $('.btn').show();
+        $('#nextBtn').hide();
+        timer.stop();
+        timer.reset();
+        timer.start();
+        $('#nextBtn').hide();
+    }
+});
+
 
 function nextQuestion() {
     indexQuestion++;
-        if (indexQuestion < QuestionsArray.length){
+        if (indexQuestion < QuestionsArray.length) {
             displayQuestion();
             $('#quizMessage').hide();
             $('.timerDisplay').show();
             $('.btn').show();
+            $('#nextBtn').hide();
             timer.stop();
             timer.reset();
             timer.start();
@@ -175,12 +192,14 @@ function nextQuestion() {
             $('.timerDisplay').html('00:00');
 
             $("#reset").show();
+            $('#nextBtn').hide();
 
             $('.resetme').click(function()
             {
                 $('#quizMessage').hide();
                 resetVariables();
                 displayQuestion();
+                $('#nextBtn').hide();
                 $('#question').show();
                 $('.btn').show();
                 $('.timerDisplay').show();
@@ -198,6 +217,7 @@ function displayQuestion() {
     $("#button1").text(QuestionsArray[indexQuestion].choices[1]);
     $("#button2").text(QuestionsArray[indexQuestion].choices[2]);
     $("#button3").text(QuestionsArray[indexQuestion].choices[3]);
+    $('nextBtn').hide();
 };
 
 //Start game on button press
@@ -207,6 +227,7 @@ $(document).ready(function() {
     $('.timerDisplay').hide();
     $('.btn').hide();
     $("#reset").hide();
+    $('#nextBtn').hide();
     
     $('#startme').on("click", function() 
     
@@ -246,6 +267,7 @@ if (indexQuestion < QuestionsArray.length){
     $('#quizMessage').show(); 
     $('.timerDisplay').hide();
     $('.btn').hide();
+    $('#nextBtn').show();
 
     setTimeout(nextQuestion, 15000);
     
