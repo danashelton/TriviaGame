@@ -1,5 +1,6 @@
 # Trivia Game
-Try to answer these trivia questions about Cleveland history 
+Try to answer these trivia questions about Cleveland history
+
 Live preview at: https://danashelton.github.io/TriviaGame/
 
 ### CWRU Coding Bootcamp
@@ -22,5 +23,4 @@ HTML
 CSS
 Bootstrap
 
-##### Background Photo
-&copy; Dana Shelton
+##### Background Photo &copy;Dana Shelton
