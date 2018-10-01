@@ -1,9 +1,9 @@
 # Trivia Game
+### CWRU Coding Bootcamp
 Try to answer these trivia questions about Cleveland history
 
 Live preview at: https://danashelton.github.io/TriviaGame/
 
-### CWRU Coding Bootcamp
 I created a trivia game that shows only one question until the player answers it or their time runs out. After user feedback, I added a "Next" button to advance to the next question instead of relying on a set timer.
 
 If the player selects the correct answer, show a screen congratulating them for choosing the right option. 
